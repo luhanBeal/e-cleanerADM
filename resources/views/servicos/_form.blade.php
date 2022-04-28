@@ -16,7 +16,7 @@
                   <div class="col-md-4">
                       <div class="form-group"> 
                           <label for="icone">Ícone</label>
-                          <select name="icone" id="icone" class="form-control">
+                          <select name="icone" id="icone" class="form-control"> 
                             <option value="">Selecione um ícone</option>
                             <option value="twf-cleaning-1" {{ isset($servico) && $servico->icone == 'twf-cleaning-1' ? 'selected' : ''}}>Ícone 1</option>
                             <option value="twf-cleaning-2" {{ isset($servico) && $servico->icone == 'twf-cleaning-2' ? 'selected' : ''}}>Ícone 2</option>
