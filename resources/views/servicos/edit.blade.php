@@ -7,6 +7,8 @@
 @stop
 
 @section('content')
+  @include('_mensagens')
+
   <form action="{{ route('servicos.update', $servico) }}" method="post">
     {{-- gambiarra pra forçar o metodo PUT --}}
     @method('PUT')
