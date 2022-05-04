@@ -46,4 +46,38 @@ class ServicoRequest extends FormRequest
             'posicao' => ['required', 'integer']
         ];
     }
+
+    /**
+     * Overwrite function to deal with Currency fields in DB
+     *
+     * @return array
+     */
+    public function validationData()
+    {
+        $data = $this->all();
+
+        $data['valor_minimo'] = $this->formatCurrency($data['valor_minimo']);
+        $data['valor_quarto'] = $this->formatCurrency($data['valor_quarto']);
+        $data['valor_sala'] = $this->formatCurrency($data['valor_sala']);
+        $data['valor_banheiro'] = $this->formatCurrency($data['valor_banheiro']);
+        $data['valor_cozinha'] = $this->formatCurrency($data['valor_cozinha']);
+        $data['valor_quintal'] = $this->formatCurrency($data['valor_quintal']);
+        $data['valor_outros'] = $this->formatCurrency($data['valor_outros']);
+
+        // Replace data from REQUEST
+        $this->replace($data);
+
+        return $data;
+    }
+
+    /**
+     * Format Currency to BR$
+     *
+     * @param string $value
+     * @return string
+     */
+    protected function formatCurrency(string $value)
+    {
+        return str_replace(['.', ','], ['', '.'], $value);
+    }
 }
