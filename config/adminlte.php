@@ -265,17 +265,17 @@ return [
         //     'icon' => 'fas fa-fw fa-lock',
         // ],
         [
-            'text'    => 'Cadastro de Serviços',
+            'text'    => 'Service registration',
             'icon'    => 'fas fa-fw fa-broom',
             'submenu' => [
                 [
-                    'text' => 'Lista de Serviços',
+                    'text' => 'List of Services',
                     // chamar a URL pelo nome da rota
                     'route'  => 'services.index',
                     'icon'    => 'fas fa-fw fa-list',
                 ],
                 [
-                    'text' => 'Novo Serviço',
+                    'text' => 'New Service',
                     'route'  => 'services.create',
                     'icon'    => 'fas fa-fw fa-file',
                 ],
@@ -307,6 +307,21 @@ return [
                 //     'text' => 'level_one',
                 //     'url'  => '#',
                 // ],
+            ],
+        ], [
+            'text'    => 'User Registration',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text' => 'List of Users',
+                    'route'  => 'users.index',
+                    'icon'    => 'fas fa-fw fa-list',
+                ],
+                [
+                    'text' => 'New User',
+                    'route'  => 'users.create',
+                    'icon'    => 'fas fa-fw fa-file',
+                ],
             ],
         ],
         // ['header' => 'labels'],
