@@ -28,22 +28,22 @@ class ServiceRequest extends FormRequest
             //validando os campos
             'name' => ['required', 'min:2', 'max:255'],
             'value_min' => ['required', 'numeric'],
-            'hours_min' => ['required', 'integer'],
-            'percent' => ['required', 'integer'],
+            'hours_min' => ['required', 'integer', 'min:1', 'max: 8'],
+            'percent' => ['required', 'integer', 'min:1', 'max: 99'],
             'value_bedroom' => ['required', 'numeric'],
-            'hours_bedroom' => ['required', 'integer'],
+            'hours_bedroom' => ['required', 'integer', 'min:1', 'max: 8'],
             'value_living_room' => ['required', 'numeric'],
-            'hours_living_room' => ['required', 'integer'],
+            'hours_living_room' => ['required', 'integer', 'min:1', 'max: 8'],
             'value_bathroom' => ['required', 'numeric'],
-            'hours_bathroom' => ['required', 'integer'],
+            'hours_bathroom' => ['required', 'integer', 'min:1', 'max: 8'],
             'value_kitchen' => ['required', 'numeric'],
-            'hours_kitchen' => ['required', 'integer'],
+            'hours_kitchen' => ['required', 'integer', 'min:1', 'max: 8'],
             'value_yard' => ['required', 'numeric'],
-            'hours_yard' => ['required', 'integer'],
+            'hours_yard' => ['required', 'integer', 'min:1', 'max: 8'],
             'value_others' => ['required', 'numeric'],
-            'hours_others' => ['required', 'integer'],
+            'hours_others' => ['required', 'integer', 'min:1', 'max: 8'],
             'icon' => ['required', Rule::in(['twf-cleaning-1', 'twf-cleaning-2', 'twf-cleaning-3'])],
-            'position' => ['required', 'integer']
+            'position' => ['required', 'integer', 'min:1', 'max: 99']
         ];
     }
 

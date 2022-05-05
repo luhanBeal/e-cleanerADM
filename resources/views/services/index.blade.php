@@ -7,6 +7,14 @@
 @stop
 
 @section('content')
+
+{{-- helper to check if there is a 'message' being send --}}
+  @if(session('message'))
+    <div class="alert alert-success">
+      {{ session('message') }}
+    </div>
+  @endif
+
   <table class="table">
     <thead>
       <tr>
@@ -19,7 +27,7 @@
       @forelse ($services as $service)
         <tr>
           <td>{{ $service->id }}</td>
-          <td>{{ $service->nome }}</td>
+          <td>{{ $service->name }}</td>
           <td>
             <a href="{{ route('services.edit', $service) }}" class="btn btn-primary">Atualizar</a>
           </td>

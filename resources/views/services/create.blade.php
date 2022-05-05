@@ -8,7 +8,7 @@
 
 @section('content')
 
-@include('_mensagens')
+@include('_messages')
 
 <form action="{{ route('services.store') }}" method="post">
   @include('services._form')

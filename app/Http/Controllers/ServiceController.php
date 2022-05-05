@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
+
+    /**
+     * List all the services
+     *
+     * @return View
+     */
     public function index()
     {
         // cuidar o GET com numero de registros na paginação
@@ -16,11 +22,22 @@ class ServiceController extends Controller
         return view('services.index')->with('services', $services);
     }
 
+    /**
+     * Show empty form
+     *
+     * @return View
+     */
     public function create()
     {
         return view('services.create');
     }
 
+    /**
+     * Insert data
+     *
+     * @param ServiceRequest $request
+     * @return REDIRECT
+     */
     // Mudar o Tipo de request para Validate
     public function store(ServiceRequest $request)
     {
@@ -34,9 +51,15 @@ class ServiceController extends Controller
         // proteger os dados inserido em 'Models/Service' add $fillable['todos os campos no BD'];
         Service::create($data);
 
-        return redirect()->route('services.index');
+        return redirect()->route('services.index')->with('message', 'Service created successfully');
     }
 
+    /**
+     * Show filled up form to change the fields
+     *
+     * @param integer $id
+     * @return View
+     */
     public function edit(int $id)
     {
         $service = Service::findOrFail($id);
@@ -44,6 +67,13 @@ class ServiceController extends Controller
         return view('services.edit')->with('service', $service);
     }
 
+    /**
+     * Update DB
+     *
+     * @param integer $id
+     * @param ServiceRequest $request
+     * @return REDIRECT
+     */
     public function update(int $id, ServiceRequest $request)
     {
         $data = $request->except('_token', '_method');
@@ -52,6 +82,6 @@ class ServiceController extends Controller
 
         $service->update($data);
 
-        return redirect()->route('services.index');
+        return redirect()->route('services.index')->with('service', $service)->with('message', 'Service updated successfully');
     }
 }
