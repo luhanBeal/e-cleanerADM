@@ -16,12 +16,12 @@
       </tr>
     </thead>
     <tbody>
-      @forelse ($servicos as $servico)
+      @forelse ($services as $service)
         <tr>
-          <td>{{ $servico->id }}</td>
-          <td>{{ $servico->nome }}</td>
+          <td>{{ $service->id }}</td>
+          <td>{{ $service->nome }}</td>
           <td>
-            <a href="{{ route('servicos.edit', $servico) }}" class="btn btn-primary">Atualizar</a>
+            <a href="{{ route('services.edit', $service) }}" class="btn btn-primary">Atualizar</a>
           </td>
         </tr>
       @empty
@@ -36,10 +36,10 @@
 
   {{-- // mostrar paginação dos itens do banco (configurar bootstrap) --}}
   <div class="d-flex justify-content-center">
-    {{ $servicos->links() }}
+    {{ $services->links() }}
   </div>
 
   <div class="float-right">
-    <a href="{{ route('servicos.create') }}" class="btn btn-success">Novo serviço</a>
+    <a href="{{ route('services.create') }}" class="btn btn-success">Novo serviço</a>
   </div>
 @stop

@@ -9,11 +9,11 @@
 @section('content')
   @include('_mensagens')
 
-  <form action="{{ route('servicos.update', $servico) }}" method="post">
+  <form action="{{ route('services.update', $service) }}" method="post">
     {{-- gambiarra pra forçar o metodo PUT --}}
     @method('PUT')
 
-    @include('servicos._form')
+    @include('services._form')
   </form>
 @stop
 

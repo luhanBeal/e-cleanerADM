@@ -10,8 +10,8 @@
 
 @include('_mensagens')
 
-<form action="{{ route('servicos.store') }}" method="post">
-  @include('servicos._form')
+<form action="{{ route('services.store') }}" method="post">
+  @include('services._form')
 </form>
 @stop
 

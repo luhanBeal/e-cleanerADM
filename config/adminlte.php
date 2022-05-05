@@ -271,12 +271,12 @@ return [
                 [
                     'text' => 'Lista de Serviços',
                     // chamar a URL pelo nome da rota
-                    'route'  => 'servicos.index',
+                    'route'  => 'services.index',
                     'icon'    => 'fas fa-fw fa-list',
                 ],
                 [
                     'text' => 'Novo Serviço',
-                    'route'  => 'servicos.create',
+                    'route'  => 'services.create',
                     'icon'    => 'fas fa-fw fa-file',
                 ],
                 // [
