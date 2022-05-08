@@ -36,7 +36,7 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\UserRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(UserRequest $request)
@@ -71,7 +71,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
-        return view('user.edit', [
+        return view('users.edit', [
             'user' => $user
         ]);
     }
@@ -79,13 +79,21 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\UserRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        return redirect()->route('users.index')->with('message', 'User updated successfully');
     }
 
     /**
