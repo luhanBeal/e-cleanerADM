@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Service List')
+@section('title', 'User List')
 
 @section('content_header')
-<h1>Service List</h1>
+<h1>User List</h1>
 @stop
 
 @section('content')
@@ -24,12 +24,13 @@
       </tr>
     </thead>
     <tbody>
-      @forelse ($services as $service)
+      @forelse ($users as $user)
         <tr>
-          <td>{{ $service->id }}</td>
-          <td>{{ $service->name }}</td>
+          <td>{{ $user->id }}</td>
+          <td>{{ $user->name }}</td>
           <td>
-            <a href="{{ route('services.edit', $service) }}" class="btn btn-primary">Update</a>
+            <a href="{{ route('users.edit', $user) }}" class="btn btn-primary">Update</a>
+            <a href="{{ route('users.destroy', $user) }}" class="btn btn-danger">Delete</a>
           </td>
         </tr>
       @empty
@@ -44,10 +45,10 @@
 
   {{-- // mostrar paginação dos itens do banco (configurar bootstrap) --}}
   <div class="d-flex justify-content-center">
-    {{ $services->links() }}
+    {{ $users->links() }}
   </div>
 
   <div class="float-right">
-    <a href="{{ route('services.create') }}" class="btn btn-success">New Service</a>
+    <a href="{{ route('users.create') }}" class="btn btn-success">New User</a>
   </div>
 @stop

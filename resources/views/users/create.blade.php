@@ -1,17 +1,17 @@
 @extends('adminlte::page')
 
-@section('title', 'New Service')
+@section('title', 'New User')
 
 @section('content_header')
-<h1>New Service</h1>
+<h1>New User</h1>
 @stop
 
 @section('content')
 
 @include('_messages')
 
-<form action="{{ route('services.store') }}" method="post">
-  @include('services._form')
+<form action="{{ route('users.store') }}" method="post">
+  @include('users._form')
 </form>
 @stop
 

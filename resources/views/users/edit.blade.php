@@ -1,18 +1,20 @@
 @extends('adminlte::page')
 
-@section('title', 'New Service')
+@section('title', 'Edit User')
 
 @section('content_header')
-<h1>New Service</h1>
+<h1>Edit User</h1>
 @stop
 
 @section('content')
+  @include('_messages')
 
-@include('_messages')
+  <form action="{{ route('users.update', $user) }}" method="post">
+    {{-- gambiarra pra forçar o metodo PUT --}}
+    @method('PUT')
 
-<form action="{{ route('services.store') }}" method="post">
-  @include('services._form')
-</form>
+    @include('users._form')
+  </form>
 @stop
 
 {{-- adminLTE permite adicao de JS(script) --}}
