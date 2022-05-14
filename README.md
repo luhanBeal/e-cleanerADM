@@ -1,9 +1,9 @@
-# Projeto sistema administrativo da plataforma E-Diaristas
+# Projeto sistema administrativo da plataforma E-Cleaner
  Desenvolvido no curso multi-stack da treinaweb
 
 # Instalando o projeto
 Clonar o repositório
-`git clone https://github.com/treinaweb/multistack-sistema-administrativo-ediaristas-php.git`
+`git clone https://github.com/luhanBeal/e-cleanerADM.git`
 # Instalar as depencências
 `composer install`
 Ou em ambiente de desenvolvimento:
