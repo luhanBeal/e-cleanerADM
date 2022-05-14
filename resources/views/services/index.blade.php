@@ -8,12 +8,7 @@
 
 @section('content')
 
-{{-- helper to check if there is a 'message' being send --}}
-  @if(session('message'))
-    <div class="alert alert-success">
-      {{ session('message') }}
-    </div>
-  @endif
+  @include('_messages_section')
 
   <table class="table">
     <thead>

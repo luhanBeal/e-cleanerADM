@@ -3,11 +3,11 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-<h1>HOME</h1>
+<h1>ADMINISTRATION</h1>
 @stop
 
 @section('content')
-<p>Bem vindos ao Sistema Luhan Dev</p>
+<p>Welcome to Luhan ADM Dev System</p>
 @stop
 
 {{-- @section('css')

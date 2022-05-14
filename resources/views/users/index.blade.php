@@ -8,18 +8,14 @@
 
 @section('content')
 
-{{-- helper to check if there is a 'message' being send --}}
-  @if(session('message'))
-    <div class="alert alert-success">
-      {{ session('message') }}
-    </div>
-  @endif
+  @include('_messages_section')
 
   <table class="table">
     <thead>
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Name</th>
+        <th scope="col">Email</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
@@ -28,6 +24,7 @@
         <tr>
           <td>{{ $user->id }}</td>
           <td>{{ $user->name }}</td>
+          <td>{{ $user->email }}</td>
           <td>
             <a href="{{ route('users.edit', $user) }}" class="btn btn-primary">Update</a>
             {{-- HORSE to force the DELETE method and not GET --}}
