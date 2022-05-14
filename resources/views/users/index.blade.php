@@ -45,7 +45,7 @@
       @empty
         <tr>
           <th></th>
-          <th>Nenhum registro foi encontrado</th>
+          <th>No records found</th>
           <th></th>
         </tr>
       @endforelse
