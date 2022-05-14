@@ -30,7 +30,16 @@
           <td>{{ $user->name }}</td>
           <td>
             <a href="{{ route('users.edit', $user) }}" class="btn btn-primary">Update</a>
-            <a href="{{ route('users.destroy', $user) }}" class="btn btn-danger">Delete</a>
+            {{-- HORSE to force the DELETE method and not GET --}}
+            <form action="{{ route('users.destroy', $user) }}" method="post" style="display: inline">
+              {{-- Blade directive --}}
+              @method('DELETE')
+              @csrf
+
+              <button type="submit" class="btn btn-danger" onclick="return confirm('Delete this user?')">
+                Delete
+              </button>
+            </form>
           </td>
         </tr>
       @empty
