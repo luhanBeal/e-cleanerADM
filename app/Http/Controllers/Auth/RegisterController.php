@@ -58,16 +58,28 @@ class RegisterController extends Controller
 
     /**
      * Create a new user instance after a valid registration.
+     * ABORT CREATION OF NEW USERS
      *
      * @param  array  $data
      * @return \App\Models\User
      */
     protected function create(array $data)
     {
+        // return abort(403);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    /**
+     * OVERWRITE method to do not permit registration of new users!.
+     *
+     * @return \Illuminate\View\View
+     */
+    // public function showRegistrationForm()
+    // {
+    //     return abort(403);
+    // }
 }

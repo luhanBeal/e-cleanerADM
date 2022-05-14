@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -15,9 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//  php artisan route:list
+
+// route to loggin
+Route::get('/', [LoginController::class, 'showLoginForm']);
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
