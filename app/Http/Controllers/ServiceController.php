@@ -60,10 +60,8 @@ class ServiceController extends Controller
      * @param integer $id
      * @return View
      */
-    public function edit(int $id)
+    public function edit(Service $service)
     {
-        $service = Service::findOrFail($id);
-
         return view('services.edit')->with('service', $service);
     }
 
@@ -74,11 +72,9 @@ class ServiceController extends Controller
      * @param ServiceRequest $request
      * @return REDIRECT
      */
-    public function update(int $id, ServiceRequest $request)
+    public function update(Service $service, ServiceRequest $request)
     {
         $data = $request->except('_token', '_method');
-
-        $service = Service::findOrFail($id);
 
         $service->update($data);
 
