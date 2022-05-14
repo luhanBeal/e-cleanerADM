@@ -1,22 +1,23 @@
-# Projeto sistema administrativo da plataforma E-Cleaner
- Desenvolvido no curso multi-stack da treinaweb
+# Administration Project to the plataform called E-Cleaner
+Developed using AminLte
 
-# Instalando o projeto
-Clonar o repositório
+# Installing the project
+Clone
 `git clone https://github.com/luhanBeal/e-cleanerADM.git`
-# Instalar as depencências
+# Instal dependencies
 `composer install`
-Ou em ambiente de desenvolvimento:
+or in development enviroment:
 `composer update`
-## Criar arquivo de configurações de ambiente
-## Copiar o arquivo de exemplo .env.example para .env na raiz do projeto configurar os detalhes da aplicação e conexão com o banco de dados.
 
-## Criar a estrutura no banco de dados
+## Copy .env.example and rename to .env to configure dabase configuration:
+`create database ecleaner;`
+
+## Create DB config
 `php artisan migrate`
-## Criar o usuário admin
+## Create administator user
 `php artisan db:seed`
-Usuário criado admin@admin.com
+USER: luhan@admin.com
 Senha: 123123123
 
-Iniciar o servidor de desenvolvimento
+Start development server
 `php artisan serve`
